@@ -1,0 +1,32 @@
+# macOS
+.DS_Store
+
+# Dart/Pub
+.dart_tool/
+.packages
+.pub/
+pubspec.lock
+build/
+.dart_frog/
+
+# Flutter specific
+.flutter-plugins
+.flutter-plugins-dependencies
+.flutter-configuration-cache
+.generated/
+
+# Example app artifacts
+example/.dart_tool/
+example/build/
+
+# IDEs and editors
+.idea/
+.vscode/
+*.iml
+
+# Logs and coverage
+*.log
+coverage/
+
+# Misc
+test/coverage.html

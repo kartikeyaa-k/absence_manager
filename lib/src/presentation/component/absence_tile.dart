@@ -11,20 +11,21 @@ class AbsenceTile extends StatelessWidget {
   Widget build(BuildContext context) {
     final colorScheme = theme.colorScheme;
 
-    Color statusColor;
-    String statusLabel;
+    Color bgColor;
+    Color textColor;
+    var statusLabel = 'NA';
 
     if (absence.confirmedAt != null) {
-      // Considered success/approved
-      statusColor = colorScheme.secondary;
+      bgColor = colorScheme.secondaryContainer;
+      textColor = colorScheme.onSecondaryContainer;
       statusLabel = 'Confirmed';
     } else if (absence.rejectedAt != null) {
-      // Red from theme
-      statusColor = colorScheme.error;
+      bgColor = colorScheme.errorContainer;
+      textColor = colorScheme.onErrorContainer;
       statusLabel = 'Rejected';
     } else {
-      // Neutral/Warning-like
-      statusColor = colorScheme.onSurface;
+      bgColor = colorScheme.tertiaryContainer;
+      textColor = colorScheme.onTertiaryContainer;
       statusLabel = 'Requested';
     }
 
@@ -55,13 +56,13 @@ class AbsenceTile extends StatelessWidget {
                     vertical: 4,
                   ),
                   decoration: BoxDecoration(
-                    color: statusColor,
+                    color: bgColor,
                     borderRadius: BorderRadius.circular(20),
                   ),
                   child: Text(
                     statusLabel,
                     style: theme.textTheme.labelMedium?.copyWith(
-                      color: statusColor,
+                      color: textColor,
                       fontWeight: FontWeight.w600,
                     ),
                   ),

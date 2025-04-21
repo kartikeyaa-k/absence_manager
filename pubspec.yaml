@@ -11,6 +11,9 @@ dependencies:
   flutter:
     sdk: flutter
   json_annotation: 4.9.0
+  
+  crewmeister_core: 
+    path: ./packages/crewmeister_core
 
 dev_dependencies:
   flutter_test:

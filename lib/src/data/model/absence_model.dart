@@ -1,9 +1,11 @@
+import 'package:absence_manager/src/data/helper/to_entity_mixin.dart';
+import 'package:absence_manager/src/domain/entity/absence_entity.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'absence_model.g.dart';
 
 @JsonSerializable()
-class AbsenceModel {
+class AbsenceModel with ToEntity<AbsenceEntity> {
   final int id;
   final int crewId;
   final int userId;
@@ -40,4 +42,22 @@ class AbsenceModel {
       _$AbsenceModelFromJson(json);
 
   Map<String, dynamic> toJson() => _$AbsenceModelToJson(this);
+
+  @override
+  AbsenceEntity toEntity() {
+    return AbsenceEntity(
+      id: id,
+      userId: userId,
+      type: type,
+      admitterNote: admitterNote,
+      memberNote: memberNote,
+      startDate: DateTime.parse(startDate),
+      endDate: DateTime.parse(endDate),
+      createdAt: DateTime.tryParse(createdAt),
+      confirmedAt: confirmedAt != null ? DateTime.tryParse(confirmedAt!) : null,
+      rejectedAt: rejectedAt != null ? DateTime.tryParse(rejectedAt!) : null,
+      memberName: memberName ?? '',
+      memberImage: memberImage ?? '',
+    );
+  }
 }

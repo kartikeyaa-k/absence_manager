@@ -2,6 +2,7 @@ name: absence_manager
 description: "A new Flutter package project."
 version: 0.0.1
 homepage:
+publish_to: none
 
 environment:
   sdk: ^3.7.2
@@ -16,7 +17,7 @@ dependencies:
   flutter_bloc: 9.1.0
   
   crewmeister_core: 
-    path: ./packages/crewmeister_core
+    path: ../crewmeister_core
 
 dev_dependencies:
   flutter_test:

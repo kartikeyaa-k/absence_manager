@@ -11,6 +11,8 @@ dependencies:
   flutter:
     sdk: flutter
   json_annotation: 4.9.0
+  equatable: 2.0.7
+  bloc: 9.0.0
   
   crewmeister_core: 
     path: ./packages/crewmeister_core

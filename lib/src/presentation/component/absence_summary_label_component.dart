@@ -25,12 +25,7 @@ class AbsenceSummaryLabel extends StatelessWidget {
         horizontal: AppSpacing.md,
         vertical: AppSpacing.xs,
       ),
-      child: Text(
-        message,
-        style: theme.textTheme.bodySmall?.copyWith(
-          color: theme.colorScheme.onSurface.withOpacity(0.6),
-        ),
-      ),
+      child: Text(message, style: theme.textTheme.bodySmall),
     );
   }
 }

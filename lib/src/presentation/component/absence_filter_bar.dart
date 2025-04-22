@@ -50,7 +50,7 @@ class AbsenceFilterBar extends StatelessWidget {
       child: DropdownButtonFormField<String>(
         elevation: 0,
         isExpanded: true,
-        alignment: Alignment.center,
+        alignment: Alignment.bottomCenter,
         icon: const SizedBox(),
         items:
             AbsenceTypeFilter.values.map((type) {

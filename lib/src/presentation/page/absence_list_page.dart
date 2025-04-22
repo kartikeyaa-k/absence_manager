@@ -129,7 +129,10 @@ class _AbsenceListPageState extends State<AbsenceListPage> {
         controller: _scrollController,
         itemCount: state.absences.length + 1,
         shrinkWrap: true,
-        padding: const EdgeInsets.only(top: AppSpacing.xs),
+        padding: const EdgeInsets.only(
+          top: AppSpacing.xs,
+          bottom: AppSpacing.md,
+        ),
         itemBuilder: (context, index) {
           if (index < state.absences.length) {
             return AbsenceTile(absence: state.absences[index], theme: theme);

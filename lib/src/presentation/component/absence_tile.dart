@@ -34,7 +34,8 @@ class AbsenceTile extends StatelessWidget {
         vertical: AppSpacing.sm,
         horizontal: AppSpacing.md,
       ),
-      shape: const RoundedRectangleBorder(borderRadius: AppRadius.small),
+      shape: const RoundedRectangleBorder(borderRadius: AppRadius.medium),
+      elevation: 16,
       child: Padding(
         padding: const EdgeInsets.all(AppSpacing.md),
         child: Column(

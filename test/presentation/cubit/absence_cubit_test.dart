@@ -4,7 +4,7 @@ import 'dart:async';
 
 import 'package:absence_manager/src/domain/entity/absence_entity.dart';
 import 'package:absence_manager/src/domain/entity/absence_paginated_response_entity.dart';
-import 'package:absence_manager/src/domain/usecase/get_absences.dart';
+import 'package:absence_manager/src/domain/usecase/get_absences_usecase.dart';
 import 'package:absence_manager/src/presentation/cubit/absence_cubit.dart';
 import 'package:absence_manager/src/presentation/cubit/absence_state.dart';
 import 'package:crewmeister_core/crewmeister_core.dart';

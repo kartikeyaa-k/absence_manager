@@ -1,8 +1,8 @@
 import 'dart:async';
 
-import 'package:absence_manager/src/presentation/component/absence_filter_bar.dart';
-import 'package:absence_manager/src/presentation/component/absence_summary_label.dart';
-import 'package:absence_manager/src/presentation/component/absence_tile.dart';
+import 'package:absence_manager/src/presentation/component/absence_filter_bar_component.dart';
+import 'package:absence_manager/src/presentation/component/absence_summary_label_component.dart';
+import 'package:absence_manager/src/presentation/component/absence_tile_component.dart';
 import 'package:absence_manager/src/presentation/cubit/absence_cubit.dart';
 import 'package:absence_manager/src/presentation/cubit/absence_filter_cubit.dart';
 import 'package:absence_manager/src/presentation/cubit/absence_filter_state.dart';

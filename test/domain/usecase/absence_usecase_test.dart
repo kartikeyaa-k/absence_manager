@@ -5,7 +5,7 @@ import 'package:absence_manager/src/domain/entity/absence_paginated_response_ent
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
 import 'package:absence_manager/src/domain/repository/absence_repository.dart';
-import 'package:absence_manager/src/domain/usecase/get_absences.dart';
+import 'package:absence_manager/src/domain/usecase/get_absences_usecase.dart';
 
 class MockAbsenceRepository extends Mock implements AbsenceRepository {}
 

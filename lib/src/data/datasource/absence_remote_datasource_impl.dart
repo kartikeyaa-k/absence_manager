@@ -1,3 +1,4 @@
+import 'package:absence_manager/src/core/utility/date_format_extension.dart';
 import 'package:absence_manager/src/data/datasource/absence_remote_datasource.dart';
 import 'package:absence_manager/src/data/model/absence_model.dart';
 import 'package:absence_manager/src/data/model/absence_paginated_response_model.dart';
@@ -32,10 +33,21 @@ class AbsenceRemoteDataSourceImpl implements AbsenceRemoteDataSource {
   Future<AbsencePaginatedResponseEntity> getAbsences({
     int page = 1,
     int limit = 10,
+    String? type,
+    DateTime? startDate,
+    DateTime? endDate,
   }) async {
+    final queryParams = <String, dynamic>{
+      'page': page,
+      'limit': limit,
+      if (type != null && type.isNotEmpty) 'type': type,
+      if (startDate != null) 'startDate': startDate.formatAsDateOnly,
+      if (endDate != null) 'endDate': endDate.formatAsDateOnly,
+    };
+
     final response = await _client.get<Map<String, dynamic>>(
       '/absences',
-      queryParameters: {'page': page, 'limit': limit},
+      queryParameters: queryParams,
     );
 
     final model = AbsencePaginatedResponseModel.fromJson(response.data ?? {});

@@ -8,6 +8,7 @@ class AbsenceState extends Equatable {
   final String? errorMessage;
   final int page;
   final bool hasReachedEnd;
+  final int total;
 
   const AbsenceState({
     this.absences = const [],
@@ -16,6 +17,7 @@ class AbsenceState extends Equatable {
     this.errorMessage,
     this.page = 1,
     this.hasReachedEnd = false,
+    this.total = 0,
   });
 
   AbsenceState copyWith({
@@ -25,6 +27,7 @@ class AbsenceState extends Equatable {
     String? errorMessage,
     int? page,
     bool? hasReachedEnd,
+    int? total,
   }) {
     return AbsenceState(
       absences: absences ?? this.absences,
@@ -33,6 +36,7 @@ class AbsenceState extends Equatable {
       errorMessage: errorMessage ?? this.errorMessage,
       page: page ?? this.page,
       hasReachedEnd: hasReachedEnd ?? this.hasReachedEnd,
+      total: total ?? this.total,
     );
   }
 

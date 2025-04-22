@@ -10,4 +10,6 @@ export 'src/domain/entity/absence_paginated_response_entity.dart';
 export 'src/domain/usecase/get_absences.dart';
 
 export 'src/presentation/cubit/absence_cubit.dart';
+export 'src/presentation/cubit/absence_filter_cubit.dart';
+
 export 'src/presentation/page/absence_list_page.dart';

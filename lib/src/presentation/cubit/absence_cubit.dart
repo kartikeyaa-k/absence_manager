@@ -10,7 +10,13 @@ class AbsenceCubit extends Cubit<AbsenceState> {
 
   final GetAbsences _getAbsences;
 
-  Future<void> loadAbsences({int page = 1, int limit = 10}) async {
+  Future<void> loadAbsences({
+    int page = 1,
+    int limit = 10,
+    String? type,
+    DateTime? startDate,
+    DateTime? endDate,
+  }) async {
     if (state.hasReachedEnd || state.isLoading) {
       return;
     }
@@ -18,9 +24,17 @@ class AbsenceCubit extends Cubit<AbsenceState> {
     emit(state.copyWith(isLoading: true, hasError: false));
 
     try {
-      final result = await _getAbsences(page: page, limit: limit);
+      final result = await _getAbsences(
+        page: page,
+        limit: limit,
+        type: type,
+        startDate: startDate,
+        endDate: endDate,
+      );
 
-      final updatedList = [...state.absences, ...result.data];
+      final updatedList =
+          page == 1 ? result.data : [...state.absences, ...result.data];
+
       final hasReachedEnd = updatedList.length >= result.total;
 
       emit(
@@ -29,6 +43,7 @@ class AbsenceCubit extends Cubit<AbsenceState> {
           page: page,
           hasReachedEnd: hasReachedEnd,
           isLoading: false,
+          total: result.total,
         ),
       );
     } on ApiException catch (e) {
@@ -46,5 +61,14 @@ class AbsenceCubit extends Cubit<AbsenceState> {
   void refresh() {
     emit(const AbsenceState());
     unawaited(loadAbsences());
+  }
+
+  void refreshWithFilters({
+    String? type,
+    DateTime? startDate,
+    DateTime? endDate,
+  }) {
+    emit(const AbsenceState());
+    unawaited(loadAbsences(type: type, startDate: startDate, endDate: endDate));
   }
 }

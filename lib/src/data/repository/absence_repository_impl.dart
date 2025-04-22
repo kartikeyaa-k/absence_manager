@@ -11,8 +11,17 @@ class AbsenceRepositoryImpl implements AbsenceRepository {
   Future<AbsencePaginatedResponseEntity> getAbsences({
     required int page,
     required int limit,
+    String? type,
+    DateTime? startDate,
+    DateTime? endDate,
   }) async {
-    final res = await remoteDataSource.getAbsences(page: page, limit: limit);
+    final res = await remoteDataSource.getAbsences(
+      page: page,
+      limit: limit,
+      type: type,
+      startDate: startDate,
+      endDate: endDate,
+    );
     return res;
   }
 }

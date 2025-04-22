@@ -10,7 +10,16 @@ class GetAbsences {
   Future<AbsencePaginatedResponseEntity> call({
     required int page,
     required int limit,
+    String? type,
+    DateTime? startDate,
+    DateTime? endDate,
   }) {
-    return _repository.getAbsences(page: page, limit: limit);
+    return _repository.getAbsences(
+      page: page,
+      limit: limit,
+      type: type,
+      startDate: startDate,
+      endDate: endDate,
+    );
   }
 }

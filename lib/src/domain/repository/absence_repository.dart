@@ -4,5 +4,8 @@ abstract class AbsenceRepository {
   Future<AbsencePaginatedResponseEntity> getAbsences({
     required int page,
     required int limit,
+    String? type,
+    DateTime? startDate,
+    DateTime? endDate,
   });
 }

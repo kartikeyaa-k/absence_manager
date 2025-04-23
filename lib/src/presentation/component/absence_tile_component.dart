@@ -86,12 +86,24 @@ class AbsenceTile extends StatelessWidget {
               style: theme.textTheme.bodyMedium,
             ),
 
-            // Member Note (optional)
+            // Member Note
             if (absence.memberNote != null &&
                 absence.memberNote!.trim().isNotEmpty) ...[
               const SizedBox(height: AppSpacing.xs),
               Text(
-                absence.memberNote!,
+                'Member note: ${absence.memberNote!}',
+                style: theme.textTheme.bodySmall?.copyWith(
+                  fontStyle: FontStyle.italic,
+                  color: colorScheme.onSurface,
+                ),
+              ),
+            ],
+            // Admitter Note
+            if (absence.admitterNote != null &&
+                absence.admitterNote!.trim().isNotEmpty) ...[
+              const SizedBox(height: AppSpacing.xs),
+              Text(
+                'Admitter note: ${absence.admitterNote!}',
                 style: theme.textTheme.bodySmall?.copyWith(
                   fontStyle: FontStyle.italic,
                   color: colorScheme.onSurface,

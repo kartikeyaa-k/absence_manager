@@ -17,8 +17,10 @@ dependencies:
   flutter_bloc: 9.1.0
   intl: 0.20.2
   
-  crewmeister_core: 
-    path: ../crewmeister_core
+  crewmeister_core:
+    git:
+      url: https://github.com/kartikeyaa-k/crewmeister_core.git
+      ref: prod
 
 dev_dependencies:
   flutter_test:

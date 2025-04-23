@@ -14,6 +14,7 @@ build/
 .flutter-plugins-dependencies
 .flutter-configuration-cache
 .generated/
+*.g.dart
 
 # Example app artifacts
 example/.dart_tool/
@@ -30,3 +31,4 @@ coverage/
 
 # Misc
 test/coverage.html
+packages/
